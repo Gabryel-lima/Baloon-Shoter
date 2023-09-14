@@ -1,0 +1,33 @@
+# Ignorar arquivos de compilação e caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+
+# Ignorar arquivos temporários
+*.swp
+*.swo
+*.log
+
+# Ignorar arquivos de configuração de IDEs
+.idea/
+.vscode/
+
+# Ignorar arquivos gerados pelo sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar arquivos de ambiente
+.env
+*.env.local
+*.env.development
+*.env.test
+*.env.production
+
+# Ignorar dependências JavaScript/Node.js
+node_modules/
+yarn-error.log
+
+# Ignorar diretórios de ambiente Python
+venv/
