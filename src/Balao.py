@@ -17,18 +17,18 @@ class Balao:
         self.posicao_box_y = 545
         self.x = None 
         self.y = None
-        self.baloes = self.criar_baloes()
+        self.baloes = [] 
+        self.criar_baloes()
         self.box_baloes()
 
     def criar_baloes(self):
-        baloes = []
         for fileira in range(self.num_blocos_por_fileira):
             for coluna in range(self.num_colunas):
                 self.x = self.posicao_box_x + coluna * (self.largura_balao_box + self.espaco_baloes_box)
                 self.y = self.posicao_box_y - coluna * (fileira * (self.altura_balao_box + self.espaco_baloes_box))  
                 balao = pygame.Rect(self.x, self.y, self.largura_balao_box, self.altura_balao_box)
-                baloes.append(balao)
-        return baloes
+                self.baloes.append(balao)
+        return self.baloes
     
     def box_baloes(self):
         print(f"Tamanho da lista de coordenadas de balões: {len(self.baloes)}")
