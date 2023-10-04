@@ -1,9 +1,5 @@
-
-
 import pygame
 from pygame.locals import *
-
-import random
 
 class Balao:
     def __init__(self, tela):
@@ -15,8 +11,8 @@ class Balao:
         self.num_blocos_por_fileira = 5
         self.posicao_box_x = 50
         self.posicao_box_y = 545
-        self.x = None 
-        self.y = None
+        self.balao_img = pygame.image.load('assets/images/balao.jpg')
+        self.balao_img = pygame.transform.scale(self.balao_img, (self.largura_balao_box, self.altura_balao_box))
         self.baloes = [] 
         self.criar_baloes()
         self.box_baloes()
@@ -25,7 +21,7 @@ class Balao:
         for fileira in range(self.num_blocos_por_fileira):
             for coluna in range(self.num_colunas):
                 self.x = self.posicao_box_x + coluna * (self.largura_balao_box + self.espaco_baloes_box)
-                self.y = self.posicao_box_y - coluna * (fileira * (self.altura_balao_box + self.espaco_baloes_box))  
+                self.y = self.posicao_box_y - fileira * (self.altura_balao_box + self.espaco_baloes_box)
                 balao = pygame.Rect(self.x, self.y, self.largura_balao_box, self.altura_balao_box)
                 self.baloes.append(balao)
         return self.baloes
@@ -37,4 +33,4 @@ class Balao:
     
     def desenhar_baloes(self):
         for balao in self.baloes:
-            pygame.draw.rect(self.tela, (150,75,0), balao)
+            self.tela.blit(self.balao_img, balao)
