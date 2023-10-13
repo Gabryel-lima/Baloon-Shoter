@@ -31,3 +31,4 @@ yarn-error.log
 
 # Ignorar diretórios de ambiente Python
 venv/
+src/Baloon_Shoter_Base.py

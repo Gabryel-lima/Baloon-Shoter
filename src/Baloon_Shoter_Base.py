@@ -150,3 +150,4 @@ class Baloon_Shoter_Base:
         #self.manipula_nivel()
         self.rect_botao_player = pygame.Rect(0,0,0,0)
         return
+    
